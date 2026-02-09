@@ -35,9 +35,9 @@ export default function Home() {
   const [theme, setTheme] = useState("light")
 
   return (
-    <main className="flex flex-col min-h-screen items-start  justify-center bg-slate-950">
-     <Alert className="bg-gray-100 text-[14px] border border-gray-200 text-black">
-  <AlertTitle >
+    <main className="flex flex-col items-start  justify-center bg-slate-600 mt-3">
+     <Alert className="bg-gray-100 text-[14px] border border-gray-200 text-black p-2 m-3">
+  <AlertTitle className="" >
     this is alert message
   </AlertTitle>
   <AlertDescription >ok this is just a description</AlertDescription>
