@@ -1,3 +1,4 @@
+"use Client"
 import { AppSidebar } from "@/components/app-sidebar";
 import {
   Breadcrumb,
@@ -13,11 +14,17 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import {BarChartComponent} from "@/components/BarChart"
+
+import { PieChartComponent } from "@/components/PieChart";
+
 
 export default function Page() {
   const total = 1000;
-  const part1 = 250;
-  const part2 = 750;
+   const chartData = [
+    { label: "part1", values: 250 },
+    { label: "part2", values: 750 },
+  ];
 
   return (
     <SidebarProvider>
@@ -46,95 +53,137 @@ export default function Page() {
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 grid-cols-3">
-            <div className="bg-emerald-300 aspect-video rounded-xl flex flex-col gap-1 justify-center items-center capitalize">
-              <span
-                className="
-      font-extrabold rounded p-0.5
-      text-sm
-      sm:text-base
-      md:text-lg
-      lg:text-xl
-      xl:text-2xl
-    "
-              >
-                total
-              </span>
-
-              <span
-                className="
-      text-gra rounded p-1
-      text-xl
-      sm:text-2xl
-      md:text-3xl
-      lg:text-4xl
-      xl:text-5xl
-    "
-              >
-                {total}
-              </span>
-            </div>
-
-           <div className="bg-blue-300 aspect-video rounded-xl flex flex-col gap-1 justify-center items-center capitalize">
-  <span
+         <div className="grid auto-rows-min gap-1 grid-cols-3">
+  {/* TOTAL */}
+  <div
     className="
-      font-extrabold rounded p-0.5
-      text-sm
-      sm:text-base
-      md:text-lg
-      lg:text-xl
-      xl:text-2xl
+      bg-emerald-300 rounded-xl flex flex-col gap-1 justify-center items-center capitalize
+      h-24
+      sm:h-28
+      md:h-32
+      lg:h-40
+      xl:h-48
+      2xl:h-56
     "
   >
-    part 1 
-  </span>
+    <span
+      className="
+        font-extrabold rounded p-0.5
+        text-sm
+        sm:text-base
+        md:text-lg
+        lg:text-xl
+        xl:text-2xl
+      "
+    >
+      total
+    </span>
 
-  <span
+    <span
+      className="
+        text-gra rounded p-1
+        text-xl
+        sm:text-2xl
+        md:text-3xl
+        lg:text-4xl
+        xl:text-5xl
+      "
+    >
+      {total}
+    </span>
+  </div>
+
+  {/* PART 1 */}
+  <div
     className="
-      text-white rounded p-1
-      text-xl
-      sm:text-2xl
-      md:text-3xl
-      lg:text-4xl
-      xl:text-5xl
+      bg-blue-300 rounded-xl flex flex-col gap-1 justify-center items-center capitalize
+      h-24
+      sm:h-28
+      md:h-32
+      lg:h-40
+      xl:h-48
+      2xl:h-56
     "
   >
-    {part1}
-  </span>
+    <span
+      className="
+        font-extrabold rounded p-0.5
+        text-sm
+        sm:text-base
+        md:text-lg
+        lg:text-xl
+        xl:text-2xl
+      "
+    >
+      part 1
+    </span>
+
+    <span
+      className="
+        text-white rounded p-1
+        text-xl
+        sm:text-2xl
+        md:text-3xl
+        lg:text-4xl
+        xl:text-5xl
+      "
+    >
+      {chartData[0].values}
+    </span>
+  </div>
+
+  {/* PART 2 */}
+  <div
+    className="
+      bg-green-300 rounded-xl flex flex-col gap-1 justify-center items-center capitalize
+      h-24
+      sm:h-28
+      md:h-32
+      lg:h-40
+      xl:h-48
+      2xl:h-56
+    "
+  >
+    <span
+      className="
+        font-extrabold rounded p-0.5
+        text-sm
+        sm:text-base
+        md:text-lg
+        lg:text-xl
+        xl:text-2xl
+      "
+    >
+      part 2
+    </span>
+
+    <span
+      className="
+        text-white rounded p-1
+        text-xl
+        sm:text-2xl
+        md:text-3xl
+        lg:text-4xl
+        xl:text-5xl
+      "
+    >
+      {chartData[1].values}
+    </span>
+  </div>
 </div>
 
-            <div className="bg-blue-200 aspect-video rounded-xl flex flex-col gap-1 justify-center items-center capitalize">
-  <span
-    className="
-      font-extrabold rounded p-0.5
-      text-sm
-      sm:text-base
-      md:text-lg
-      lg:text-xl
-      xl:text-2xl
-    "
-  >
-    part 2
-  </span>
-
-  <span
-    className="
-      text-white rounded p-1
-      text-xl
-      sm:text-2xl
-      md:text-3xl
-      lg:text-4xl
-      xl:text-5xl
-    "
-  >
-    {part2}
-  </span>
+      <div className="bg-gray-300 flex-1 rounded-xl font-extrabold capitalize border-2 border-white p-4 
+                grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr">
+  <BarChartComponent data={chartData} />
+  <BarChartComponent data={chartData} />
+  <PieChartComponent data={chartData} />
+  <PieChartComponent data={chartData} />
+  <BarChartComponent data={chartData} />
+  <PieChartComponent data={chartData} />
 </div>
 
-          </div>
-          <div className="bg-gray-300 min-h-[100vh] flex-1 rounded-xl md:min-h-min flex justify-center items-center font-extrabold capitalize">
-            charts
-          </div>
+
+          
         </div>
       </SidebarInset>
     </SidebarProvider>
