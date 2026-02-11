@@ -29,15 +29,15 @@ import {
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "Dhivya",
+    email: "me@example.com",
     avatar: "",
   },
   teams: [
     {
       name: "Grand Ventura",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: "Trading Company",
     },
    
   ],
@@ -50,19 +50,15 @@ const data = {
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
+          title: "Products",
+          url: "/dashboard/product",
+        },
+        {
+          title: "clients",
           url: "#",
         },
         {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
+          title: "Suppliers",
           url: "#",
         },
       ],
@@ -73,11 +69,11 @@ const data = {
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Display settings",
           url: "#",
         },
         {
-          title: "Team",
+          title: "security & passwords",
           url: "#",
         },
        
