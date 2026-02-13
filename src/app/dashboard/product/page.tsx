@@ -32,7 +32,7 @@ export default function ProductPage() {
                 />
 
                 {/* Badge on top-right */}
-                <Badge className="absolute top-2 right-2 text-[10px] px-2 py-0.5">
+                <Badge className="absolute top-2 right-2 text-[10px] px-2 py-0.5 bg-amber-300">
                   Featured
                 </Badge>
               </div>

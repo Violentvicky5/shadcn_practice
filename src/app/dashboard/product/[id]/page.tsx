@@ -20,10 +20,10 @@ export default function ProductPage() {
     )
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 p-2 sm:p-4 lg:p-8">
-      <div className="bg-white shadow-lg rounded-xl w-full max-w-4xl flex flex-col md:flex-row overflow-hidden">
+    <div className="flex items-center justify-center min-h-screen p-2 sm:p-4 lg:p-8">
+      <div className=" shadow-lg rounded-xl w-full max-w-4xl flex flex-col md:flex-row overflow-hidden">
         {/* IMAGE */}
-        <div className="relative md:w-1/2 flex items-center justify-center bg-gray-100 p-2 sm:p-4 md:p-6">
+        <div className="relative md:w-1/2 flex items-center justify-center  p-2 sm:p-4 md:p-6">
           <Image
             src={product.image}
             alt={product.name}
@@ -33,7 +33,7 @@ export default function ProductPage() {
           />
 
           {/* Badge: top-right, scales with screen */}
-          <Badge className="absolute top-5 sm:top-7 md:top-4 right-2 sm:right-20 md:right-4 text-[8px] sm:text-[10px] md:text-xs px-2 py-0.5">
+          <Badge className="absolute top-5 sm:top-7 md:top-8 right-25 sm:right-35 md:right-10 text-[8px] sm:text-[10px] md:text-xs px-2 py-0.5 bg-amber-300">
             Featured
           </Badge>
         </div>
@@ -41,19 +41,19 @@ export default function ProductPage() {
         {/* DETAILS */}
         <div className="md:w-1/2 p-4 sm:p-6 flex flex-col justify-between">
           <div>
-            <h1 className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+            <h1 className="text-lg sm:text-2xl md:text-3xl font-bold  mb-2">
               {product.name}
             </h1>
-            <p className="text-xs sm:text-sm md:text-base text-gray-600 truncate">
+            <p className="text-xs sm:text-sm md:text-base text-gray-500 truncate">
               {product.description}
             </p>
           </div>
 
           <div className="mt-4 flex flex-col gap-2 sm:gap-3">
-            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900">
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold ">
               ₹{product.price}
             </p>
-            <Button className="w-full text-sm sm:text-base md:text-lg">
+            <Button className="w-full justify-center text-sm sm:text-base md:text-lg">
               Buy Now
             </Button>
           </div>
