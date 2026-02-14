@@ -75,10 +75,7 @@ export default function ProgressTabs() {
           </div>
 
           {/*  HORIZONTAL TABS (≥500px) */}
-          <ol
-            className="hidden min-[500px]:grid grid-cols-3 rounded-lg
-         border border-gray-200 shadow-md overflow-hidden bg-white"
-          >
+          <ol className="hidden min-[500px]:grid grid-cols-3 rounded-lg border border-gray-200 shadow-md overflow-hidden bg-white">
             {tabs.map((tab, index) => {
               const Icon = tab.icon;
               const isActive = activeTab === index;
